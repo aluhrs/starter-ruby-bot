@@ -56,6 +56,15 @@ client.on :message do |data|
     client.message channel: data['channel'], text: help
     logger.debug("A call for help")
 
+  when 'pokemon' then
+    client.message channel: data['channel'],
+                   text: "I wanna be the very best \n
+                          Like no one ever was \n
+                          To catch them is my real test \n
+                          To train them is my cause \n
+                          Pokemon! Gotta catch'em all"
+
+
   when /^bot/ then
     client.message channel: data['channel'], text: "Sorry <@#{data['user']}>, I don\'t understand. \n#{help}"
     logger.debug("Unknown command")
